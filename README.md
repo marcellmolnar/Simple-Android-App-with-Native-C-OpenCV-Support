@@ -1,14 +1,15 @@
 # Simple Android App with Native C++ Support
+Shows the camera view in fullscreen in gray. The color convertion done with native C++ OpenCV code.
 
-#### SETUP:
+### SETUP:
 1. Download OpenCV for Android pack. Unzip to C:/
 2. New Android project with C++ support.
 3. New->Import module: path: C:/OpenCV-android-sdk/sdk/java
-4. Go to File->Project Structure. On the left, select app. On the top select Dependencies. Add new Module dependency and select openCVLibrary.
+4. Go to File->Project Structure. On the left, select app. On the top, select Dependencies. Add new Module dependency and select openCVLibrary.
 5. App build gradle and OpenCV build gradle should have the same:
 	compileSdkVersion buildToolsVerion minSdkVersion and targetSdkVersion.
 6. Create new directory in the /src/main folder named "jniLibs".
-7. Copy into jniLibs all the folder in C:/OpenCV-android-sdk/sdk/native/libs (arm64-v8a,armeabi,etc.)
+7. Copy into jniLibs all the folders in C:/OpenCV-android-sdk/sdk/native/libs (arm64-v8a,armeabi,etc.)
 8. Modify CMakeLists.txt with the following lines:
 	To the beginning: 
 		
@@ -41,3 +42,8 @@
                         lib_opencv )
 		
 9. Try to Sync and Compile.
+
+### Sources I used:
+https://stackoverflow.com/questions/38958876/can-opencv-for-android-leverage-the-standard-c-support-to-get-native-build-sup
+https://www.youtube.com/watch?v=Z2vrioEr9OI
+https://www.youtube.com/watch?v=0fdIiOqCz3o
