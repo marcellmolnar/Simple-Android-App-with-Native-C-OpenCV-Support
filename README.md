@@ -5,7 +5,7 @@ Useful when creating a new project.
 ### SETUP:
 1. Download OpenCV for Android pack. Unzip to C:/ (or *your opencv path*)
 2. New Android project with C++ support.
-3. New->Import module: path: C:/OpenCV-android-sdk/sdk/java (or *your opencv path/OpenCV-android-sdk/sdk/java*)
+3. New->Import module: path: C:/OpenCV-android-sdk/sdk/java (or *your opencv path*/OpenCV-android-sdk/sdk/java)
 4. Go to File->Project Structure. On the left, select app. On the top, select Dependencies. Add new Module dependency and select openCVLibrary.
 5. App build gradle and OpenCV build gradle should have the same:
 	compileSdkVersion buildToolsVerion minSdkVersion and targetSdkVersion.
