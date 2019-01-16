@@ -11,21 +11,26 @@
 7. Copy into jniLibs all the folder in C:/OpenCV-android-sdk/sdk/native/libs (arm64-v8a,armeabi,etc.)
 8. Modify CMakeLists.txt with the following lines:
 	To the beginning: 
+		
 		>set(pathToOpenCV C:\\OpenCV-android-sdk)
 		>set(pathToProject C:\\Users\\Marci\\Desktop\\other_stuff\\Android/OpenCV)
 	
 	After "cmake_minimum_requires":
+		
 		>#Two sets suggested by Bruno Alexandre Krinski 20160825
 		>set(CMAKE VERBOSE MAKEFILE on)
 		>set(CMAKE CXX FLAGS "{CMAKE CXX FLAGS} -std=gnu++11")
-		
+		>
 		>include_directories(${pathToOpenCV}\\sdk\\native\\jni\\include)
 		
 	After "add_library":	
-		# Adding OpenCV
-		add_library(lib_opencv SHARED IMPORTED)
-		set_target_properties(lib_opencv PROPERTIES IMPORTED_LOCATION ${pathToProject}\\app\\src\\main\\jniLibs\\${ANDROID_ABI}\\libopencv_java3.so)
+		
+		># Adding OpenCV
+		>add_library(lib_opencv SHARED IMPORTED)
+		>set_target_properties(lib_opencv PROPERTIES IMPORTED_LOCATION ${pathToProject}\\app\\src\\main\\jniLibs\\${ANDROID_ABI}\\libopencv_java3.so)
+	
 	Modify last command "target_link_libraries" to:
+		
 		>target_link_libraries( # Specifies the target library.
         >               native-lib
 		>
