@@ -3,18 +3,18 @@ Shows the camera view in fullscreen in gray. The color convertion done with nati
 Useful when creating a new project.
 
 ### SETUP:
-1. Download OpenCV for Android pack. Unzip to C:/ (or *your path*)
+1. Download OpenCV for Android pack. Unzip to C:/ (or *your opencv path*)
 2. New Android project with C++ support.
-3. New->Import module: path: C:/OpenCV-android-sdk/sdk/java (or *your path/OpenCV-android-sdk/sdk/java*)
+3. New->Import module: path: C:/OpenCV-android-sdk/sdk/java (or *your opencv path/OpenCV-android-sdk/sdk/java*)
 4. Go to File->Project Structure. On the left, select app. On the top, select Dependencies. Add new Module dependency and select openCVLibrary.
 5. App build gradle and OpenCV build gradle should have the same:
 	compileSdkVersion buildToolsVerion minSdkVersion and targetSdkVersion.
-6. Create new directory in the *project directory*/src/main folder named "jniLibs".
-7. Copy into jniLibs all the folders (arm64-v8a,armeabi,etc.) from C:/OpenCV-android-sdk/sdk/native/libs (or *your path/OpenCV-android-sdk/sdk/java*)
+6. Create new directory in the *your project path*/src/main folder named "jniLibs".
+7. Copy into jniLibs all the folders (arm64-v8a,armeabi,etc.) from C:/OpenCV-android-sdk/sdk/native/libs (or *your opencv path*/OpenCV-android-sdk/sdk/java)
 8. Modify CMakeLists.txt with the following lines:
 	To the beginning: 
 		
-		set(pathToOpenCV C:\\OpenCV-android-sdk (or *your path*))
+		set(pathToOpenCV C:\\OpenCV-android-sdk (or *your opencv path*))
 		set(pathToProject *your project path*)
 	
 	After "cmake_minimum_requires":
